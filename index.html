@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>Radio 6</title>
+<meta name="description" content="Radio 6, the pirate radio on quarantine times" />
+<meta name="keywords" content="radio6, btc, eth, dai, dao, blockchain" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" media="screen" href="assets/css/cassette-tape-ui.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="assets/css/cassette-tape-ui-blur.css" />
+<noscript>
+ <!-- Legal? Probably not - but, works. -->
+ <link rel="stylesheet" type="text/css" media="screen" href="assets/css/cassette-tape-ui-blur-nojs.css" />
+</noscript>
+<link rel="stylesheet" type="text/css" media="screen" href="assets/css/radio6.css" />
+<script src="assets/script/soundmanager2.js"></script>
+<script src="assets/script/cassette-tape-ui.js"></script>
+<script src="assets/script/radio6.js"></script>
+</head>
+
+<body>
+
+<div id="radio6-header-wrapper">
+ <div id="radio6-header">
+  <h1>Radio <img src="assets/image/radio6.svg" style="height: 100px;"></h1>
+  <p>Radio 6: the pirate radio on quarantine times</p>
+ </div>
+</div>
+
+<div id="tape-loader">
+ <div class="spinner-box">
+  <div class="spinner"></div>
+ </div>
+</div>
+
+<div class="draggable clear ma-r90 cutout tape">
+ <div class="blur-image-wrapper">
+  <canvas class="blur-image"></canvas>
+ </div>
+ <div class="transparency-sheet"></div>
+ <div class="tape-shell image-mask" data-image-repeat="true" data-mask-url="assets/image/ma-r90-mask.png"></div>
+ <div class="tape-gradient image-mask" data-mask-url="assets/image/ma-r90-mask.png"></div>
+ <div class="tab-left">
+  <div class="notch"></div>
+  <div class="ridge"></div>
+ </div>
+ <div class="tab-right">
+  <div class="notch"></div>
+  <div class="ridge"></div>
+ </div>
+ <div class="rail-left"></div>
+ <div class="rail-right"></div>
+ <div class="rail-middle">
+  <div class="rail-middle-outline">
+   <div class="tape-pad-holder">
+    <div class="tape-pad"></div>
+    <div class="tape-pad-line"></div>
+   </div>
+  </div>
+  <div class="screw-bm"></div>
+ </div>
+ <div class="screw-tl"></div>
+ <div class="screw-tr"></div>
+ <div class="screw-bl"></div>
+ <div class="screw-br"></div>
+ <div class="screw-tm"></div>
+ <div class="left reel-mask"></div>
+ <div class="right reel-mask"></div>
+ <canvas class="connecting-tape"></canvas>
+ <div class="left reel"></div>
+ <div class="left spokes"></div>
+ <div class="right reel"></div>
+ <div class="right spokes"></div>
+ <div class="progress-notches">
+  <div class="n1"></div>
+  <div class="n2"></div>
+  <div class="n3"></div>
+  <div class="n4"></div>
+  <div class="n5"></div>
+  <div class="n6"></div>
+  <div class="n7"></div>
+  <div class="n8"></div>
+  <div class="n9"></div>
+ </div>
+
+ <div id="tape-form">
+  <div class="label" name="tape_url">AWESOME PIRATE MIX</div>
+ </div>
+
+ <div class="aqua controls">
+  <div class="bd">
+   <ul>
+    <li><a href="#" title="play/pause" class="play">&#9668;</a></li>
+    <li><a href="#" title="rewind" class="rew">&#171;</a></li>
+    <li><a href="#" title="fast-forward" class="ffwd">&#187;</a></li>
+    <li><a href="#" title="stop" class="stop">&#9632;</a></li>
+   </ul>
+  </div>
+ </div>
+</div>
+
+<script>
+(function() {
+  window.setTimeout(function() {
+    // transition hack
+    document.getElementById('tape-loader').className = 'visible';
+  }, 1);
+  // oh, what a hack! (radio6 only: no high-end unicode characters on WinXP)
+  var char = '&infin;';
+  if (navigator.userAgent.indexOf('Windows NT 5.1') !== -1) {
+    document.getElementById('nextBackground').innerHTML = char + '&nbsp;';
+  }
+}());
+</script>
+
+</body>
+</html>
