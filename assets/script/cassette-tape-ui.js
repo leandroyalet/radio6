@@ -1063,7 +1063,7 @@ function init() {
 
     s = soundManager.createSound({
       id: 'tapeSound',
-      url: 'http://144.217.254.14:8149/live',
+      url: 'https://servidorstream.com/radio.php?q=8149/live',
       multiShot: false,
       whileplaying: function() {
         for (var i = tapeUIs.length; i--;) {
