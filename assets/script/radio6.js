@@ -2,6 +2,22 @@
 
 function init() {
 
+    function fetchSongName(){
+      fetch('https://servidorstream.com/radio.php?q=8149/live.xspf')
+      .then(response => response.text())
+      .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
+      .then(data => {
+        var title = data.querySelector('playlist > trackList > track > title').textContent;
+        document.getElementById('songTitle').innerHTML = title;
+        console.info("Loaded song title: " + title);
+        setTimeout(function(){
+          fetchSongName();
+        }, 20000);
+      })
+    }
+
+    fetchSongName();
+
   // Demo-specific things: background-switching, etc.
 
   var bgIndex = 1,
