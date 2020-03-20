@@ -149,6 +149,24 @@
     z-index: 6;
 }
 
+.tape .label div {
+    display: block;
+    width: 200%;
+    position: absolute;
+    overflow: hidden;
+    animation: marquee 5s linear infinite;
+}
+
+.tape .label span {
+    float: left;
+    width: 50%;
+}
+
+@keyframes marquee {
+    0% { left: 0; }
+    100% { left: -80%; }
+}
+
 .tape.ma-r90 .label {
     top: 62%;
     width: 75%;
