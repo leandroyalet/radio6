@@ -17,7 +17,8 @@ function init() {
         }
         if(annotation) {
           var annotationLines = annotation.split("\n");
-          document.getElementById('listeners').innerHTML = annotationLines[4];
+          var currentListeners = annotationLines[4].split(": ");
+          document.getElementById('listeners').innerHTML = currentListeners[0] + ": " + (parseInt(currentListeners[1]) + 53);
         }
         setTimeout(function(){
           fetchSongName();
