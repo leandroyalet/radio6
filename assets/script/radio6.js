@@ -8,8 +8,17 @@ function init() {
       .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
       .then(data => {
         var title = data.querySelector('playlist > trackList > track > title').textContent;
-        document.getElementById('songTitle').innerHTML = title;
-        console.info("Loaded song title: " + title);
+        var annotation = data.querySelector('playlist > trackList > track > annotation').textContent;
+        if(title) {
+          document.getElementById('songTitle').innerHTML = title;
+          console.info("Loaded song title: " + title);
+        } else {
+          document.getElementById('songTitle').innerHTML = "AWESOME PIRATE MIX";
+        }
+        if(annotation) {
+          var annotationLines = annotation.split("\n");
+          document.getElementById('listeners').innerHTML = annotationLines[4];
+        }
         setTimeout(function(){
           fetchSongName();
         }, 20000);
